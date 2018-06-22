@@ -26,5 +26,5 @@ fuel_data = requests.get(fuel_url)
 fuel_properties_data = fuel_data.text # should be fine...
 
 soup_data = BeautifulSoup(fuel_properties_data, "html.parser") # had to add "html.parser" to parameter
-for link in soup_data.find_all('a'): 
-  print(link.get('href')) 
+for data in soup_data.find_all('tr'): 
+  print(data.get('tr')) 
