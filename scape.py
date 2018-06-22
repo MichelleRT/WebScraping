@@ -19,14 +19,12 @@ import requests
 from bs4 import BeautifulSoup
 
 # Get the fuel engine co-op database url
-fuel_url = raw_input("Enter a website URL to extract data from: ") 
+fuel_url = raw_input("Enter a website URL to extract data from: ") # works just fine :) 
 fuel_data = requests.get(fuel_url) 
 
 # We want the fuel properties data in a text file
-fuel_properties_data = fuel_data.text 
-soup_data = BeautifulSoup(fuel_properties_data) 
-for link in soup_data.find_all('RON'): 
-  print(link.get('href') 
+fuel_properties_data = fuel_data.text # should be fine...
 
-
-
+soup_data = BeautifulSoup(fuel_properties_data, "html.parser") # had to add "html.parser" to parameter
+for link in soup_data.find_all('a'): 
+  print(link.get('href')) 
