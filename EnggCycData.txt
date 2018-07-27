@@ -1,0 +1,26 @@
+Hydrocarbons	RON	MON
+Paraffins
+Pentane	61.7	61.9
+Hexane	24.8	26.0
+Heptane	0.0	0.0
+Octane	-19.0	-15.0
+Nonane	-17.0	-20.0
+Paraffins
+Isopentane	92.3	90.3
+Isoheptane	42.4	46.6
+2-Methyl heptane (Isooctane)	21.7	23.8
+2-Methyl heptane (Isooctane)	26.8	35.0
+2,4-Dimethyl hexane (Isooctane)	65.2	69.9
+2,2,4-Trimethyl pentane (Isooctane)	100.0	100.0
+Olefins
+1-Pentene	90.0	77.1
+1-Octene	28.7	34.7
+3-Octene	72.5	68.1
+4-Methyl 1-Pentene	95.7	80.9
+Aromatics
+Benzene	N/A	114.8
+Toluene	120.1	103.5
+o-Xylene	120.0	103.0
+m-Xylene	145.0	124.0
+p-Xylene	146.0	127.0
+Ethyl benzene	107.4	97.9
