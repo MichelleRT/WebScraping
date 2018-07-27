@@ -9,22 +9,52 @@ octane number), TSI (threshold soot index), and MP (melting point) can be found,
 taking data from the fuel engine co-op database 
 (url: https://fuelsdb.nrel.gov/fmi/webd/FuelEngineCoOptimization).   
 
-However, in order to make sure we can still pull data from other websites, this program can 
-be used to pull data from any website. 
-
-Reference: http://www.pythonforbeginners.com/python-on-the-web/web-scraping-with-beautifulsoup 
-
 """
-import requests
+# import requests # so we can still web scrape even with page timeouts
+# from bs4 import BeautifulSoup
+# import urllib2
+
+# """
+# For timeout handling, I referenced this website:
+# http://winstonlarson.com/scraping-timeouts 
+
+# """
+# timeout = 60 
+# url = https://fuelsdb.nrel.gov/fmi/webd/FuelEngineCoOptimization
+
+# while True: 
+#   try: 
+#     webpage = requests.get(url, timeout=60)
+#     page = urllib2.urlopen(webpage)
+#     soup = BeautifulSoup(page, "html.parser")
+#     print("This is the soup html: ", soup)
+#     break
+#   except requests.exceptions.RequestException as e: # If doesn't work, then try again
+#     pass
+
+# webpage = "https://fuelsdb.nrel.gov/fmi/webd/FuelEngineCoOptimization"
+# page = urllib2.urlopen(webpage) # This will get the HTML page of the url
+
+# # find the data we want!
+# soup = BeautifulSoup(page, "html.parser") # HTML parsing 
+# print("This is the soup html: ", soup) # to see what we are actually getting 
+
+# # the session keeps expiring...
+# # so now I've just exported the file for now 
+
+
+
+"Section for parsing a .xml file (should be similar to parsing HTML)"
 from bs4 import BeautifulSoup
+import urllib 
+# import re
 
-# Get the fuel engine co-op database url
-fuel_url = raw_input("Enter a website URL to extract data from: ") # works just fine :) 
-fuel_data = requests.get(fuel_url) 
+file = urllib.urlopen("file:/Users/mtse/Documents/metacyc_data/metabolic-reactions.xml") 
+soup = BeautifulSoup(file, "html.parser") 
+# print(soup)
+print('a')
 
-# We want the fuel properties data in a text file
-fuel_properties_data = fuel_data.text # should be fine...
+# for compartment_tag in soup.find_all("compartment"):
+#     print compartment_tag.text, compartment_tag.next_sibling
 
-soup_data = BeautifulSoup(fuel_properties_data, "html.parser") # had to add "html.parser" to parameter
-for data in soup_data.find_all('tr'): 
-  print(data.get('tr')) 
+
